@@ -1,0 +1,85 @@
+using System;
+using System.Windows.Forms;
+
+namespace LoginApi
+{
+    public partial class Form1 : Form
+    {
+        Label lblAd, lblSoyad, lblTelefon, lblEmail, lblSifre;
+        TextBox txtAd, txtSoyad, txtTelefon, txtEmail, txtSifre;
+        Button btnKayit;
+
+        public Form1()
+        {
+            InitializeComponent();
+            KayitEkraniOlustur();
+        }
+
+        private void KayitEkraniOlustur()
+        {
+            this.Text = "Kullanıcı Kayıt";
+            this.Width = 400;
+            this.Height = 380;
+
+            lblAd = new Label() { Text = "Ad", Left = 20, Top = 20 };
+            txtAd = new TextBox() { Left = 120, Top = 20, Width = 200 };
+
+            lblSoyad = new Label() { Text = "Soyad", Left = 20, Top = 60 };
+            txtSoyad = new TextBox() { Left = 120, Top = 60, Width = 200 };
+
+            lblTelefon = new Label() { Text = "Telefon", Left = 20, Top = 100 };
+            txtTelefon = new TextBox() { Left = 120, Top = 100, Width = 200 };
+
+            lblEmail = new Label() { Text = "E-Posta", Left = 20, Top = 140 };
+            txtEmail = new TextBox() { Left = 120, Top = 140, Width = 200 };
+
+            lblSifre = new Label() { Text = "Şifre", Left = 20, Top = 180 };
+            txtSifre = new TextBox()
+            {
+                Left = 120,
+                Top = 180,
+                Width = 200,
+                PasswordChar = '*'
+            };
+
+            btnKayit = new Button()
+            {
+                Text = "Kayıt Ol",
+                Left = 120,
+                Top = 230,
+                Width = 120
+            };
+
+            btnKayit.Click += BtnKayit_Click;
+
+            Controls.Add(lblAd);
+            Controls.Add(txtAd);
+
+            Controls.Add(lblSoyad);
+            Controls.Add(txtSoyad);
+
+            Controls.Add(lblTelefon);
+            Controls.Add(txtTelefon);
+
+            Controls.Add(lblEmail);
+            Controls.Add(txtEmail);
+
+            Controls.Add(lblSifre);
+            Controls.Add(txtSifre);
+
+            Controls.Add(btnKayit);
+        }
+
+        private void BtnKayit_Click(object sender, EventArgs e)
+        {
+            string mesaj =
+                "Ad: " + txtAd.Text +
+                "\nSoyad: " + txtSoyad.Text +
+                "\nTelefon: " + txtTelefon.Text +
+                "\nE-Posta: " + txtEmail.Text +
+                "\nŞifre: " + txtSifre.Text;
+
+            MessageBox.Show(mesaj, "Kayıt Bilgileri");
+        }
+    }
+}
