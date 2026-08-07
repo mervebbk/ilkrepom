@@ -17,21 +17,21 @@ Veritabanı adı:
 
 ```text
 KayitEkraniDb
-## API İşlemleri
+# API İşlemleri
 
-### Tüm kullanıcıları getir
+# Tüm kullanıcıları getir
 
 GET `/api/Users`
 
-### ID'ye göre kullanıcı getir
+# ID'ye göre kullanıcı getir
 
 GET `/api/Users/{id}`
 
-### Kullanıcı güncelle
+# Kullanıcı güncelle
 
 PUT `/api/Users/{id}`
 
-### Kullanıcı sil
+# Kullanıcı sil
 
 DELETE `/api/Users/{id}`
 
