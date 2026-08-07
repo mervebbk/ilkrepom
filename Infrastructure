@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using ilkrepom.domain;
+using kayıtekranı.domain;
 
-namespace ilkrepom.infrastructure
+namespace kayıtekranı.infrastructure
 {
     public class UserRepository
     {
