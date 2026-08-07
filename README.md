@@ -1,22 +1,19 @@
-dotnet new webapi -n LoginApi
-cd LoginApi
-public class User
-{
-    public int Id { get; set; }
-    public string FirstName { get; set; } = "";
-    public string LastName { get; set; } = "";
-    public string Email { get; set; } = "";
-    public string Password { get; set; } = "";
-}
-app.MapPost("/register", (User user) =>
-{
-    // Veritabanına kullanıcı kaydet
-    return Results.Ok("Kayıt başarılı");
-});
-app.MapPost("/login", (LoginRequest login) =>
-{
-    // Email ve şifreyi kontrol et
-    // Doğruysa JWT Token üret
-    return Results.Ok(new { Token = "jwt-token" });
+# Kayıt Ekranı API
 
+Bu proje kullanıcı kayıt ve giriş işlemlerini gerçekleştirmek için
+ASP.NET Core Web API kullanılarak geliştirilmiştir.
 
+## Database Kurulumu
+
+Projede kullanıcı bilgilerini saklamak için SQL Server ve Entity Framework Core kullanılmaktadır.
+
+### 1. SQL Server Kurulumu
+
+Bilgisayara SQL Server ve SQL Server Management Studio (SSMS) kurulmalıdır.
+
+SQL Server kurulumu tamamlandıktan sonra SQL Server üzerinde yeni bir veritabanı oluşturulur.
+
+Veritabanı adı:
+
+```text
+KayitEkraniDb
