@@ -1,14 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
-using kayıtekranı.Domain;
-using kayıtekranı.Infrastructure;
+using IlkRepom.Domain.Entities;
+using IlkRepom.Infrastructure.Repositories;
 
-namespace kayıtekranı.Controllers
+namespace IlkRepom.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly UserRepository repository = new UserRepository();
+        private readonly UserRepository repository;
+
+        public UsersController(UserRepository repository)
+        {
+            this.repository = repository;
+        }
 
         [HttpGet]
         public IActionResult GetAll()
